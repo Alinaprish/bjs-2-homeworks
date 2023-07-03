@@ -5,34 +5,37 @@ function Student(name, gender, age) {
    this.marks = [];
 }
 
-new Student
 
-new Student
-
-new Student
-
-Student.prototype.setSubject = function (subjectName) {
-    subjectName = subject;
+this.Student.prototype.setSubject = function (subjectName) {
+    this.subjec = subjectName;
 }
 
-Student.prototype.addMarks = function (...marks) {
-    Student.hasOwnProperty('marks');
-    marks = [...marks];
+
+this.Student.prototype.addMarks = function (...marks) {
+    if (this.marks === undefined) {
+        this.marks = marks;
+    }
+    else {
+        this.marks = this.marks.concat(marks);
+    }
 }
 
-Student.prototype.getAverage = function () {
-    Student.hasOwnProperty('marks');
-    [...marks].reduce((acc, item, index, arr)=> {
-        acc+=item;
-        if(index === marks.length - 1){
-            return acc / marks.length;
-        }
-        return acc;
-    }, 0)
+this.Student.prototype.getAverage = function () {
+    if (this.marks === undefined){
+        return 'Нет оценок';
+    }else {
+        return this.marks.reduce((acc, item, index, arr) => {
+            acc+=item;
+            if(index === marks.length - 1){
+                return acc / marks.length;
+            }
+            return acc;
+        }, 0)
+}
 }
 
-Student.prototype.exclude = function (reason) {
-    delete Student.subject;
-    delete Student.marks;
+this.Student.prototype.exclude = function (reason) {
+    delete this.subject;
+    delete thus.marks;
     this.excluded = reason;
 }
