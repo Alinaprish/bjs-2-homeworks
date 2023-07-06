@@ -1,4 +1,4 @@
-class PrintEdtionItem {
+class PrintEditionItem {
     constructor(name, releaseDate, pagesCount){
         this.name = name;
         this.releaseDate = releaseDate;
@@ -26,7 +26,7 @@ class PrintEdtionItem {
     }
 }
 
-class Magazine extends PrintEdtionItem {
+class Magazine extends PrintEditionItem {
     constructor(name, releaseDate, pagesCount){
         super(name, releaseDate, pagesCount);
         this.state = 100;
@@ -34,8 +34,8 @@ class Magazine extends PrintEdtionItem {
         }
     }
 
-class Book extends PrintEdtionItem {
-    constructor(name, releaseDate, pagesCount, author){
+class Book extends PrintEditionItem {
+    constructor(author, name, releaseDate, pagesCount){
         super(name, releaseDate, pagesCount);
         this.state = 100;
         this.type = "book";
@@ -44,8 +44,8 @@ class Book extends PrintEdtionItem {
     }
 
 class NovelBook extends Book {
-    constructor(name, releaseDate, pagesCount, author){
-        super(name, author, releaseDate, pagesCount);
+    constructor(author, name, releaseDate, pagesCount){
+        super(author, name, releaseDate, pagesCount);
         this.state = 100;
         this.type = "novel";
         this.author = author;
@@ -53,8 +53,8 @@ class NovelBook extends Book {
     }
 
 class FantasticBook extends Book {
-    constructor(name, releaseDate, pagesCount, author){
-        super(name, author, releaseDate, pagesCount);
+    constructor(author, name, releaseDate, pagesCount){
+        super(author, name, releaseDate, pagesCount);
         this.state = 100;
         this.type = "fantastic";
         this.author = author;
@@ -62,9 +62,9 @@ class FantasticBook extends Book {
     }  
 
 
-class DetectivBook extends Book {
-    constructor(name, releaseDate, pagesCount, author){
-        super(name, author, releaseDate, pagesCount);
+class DetectiveBook extends Book {
+    constructor(author, name, releaseDate, pagesCount){
+        super(author, name, releaseDate, pagesCount);
         this.state = 100;
         this.type = "detective";
         this.author = author;
@@ -76,7 +76,7 @@ class Library {
         this.name = name;
         this.books = [];
     }
-}
+
 
 addBook (Book) {
     if (Book.state > 30) {
@@ -95,3 +95,6 @@ giveBookByName (bookName) {
     }
     return book;
 }
+
+}
+
